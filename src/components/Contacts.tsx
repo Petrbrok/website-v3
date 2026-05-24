@@ -180,7 +180,7 @@ export default function Contacts() {
           <div className="reveal-right">
             <div className="rounded-2xl overflow-hidden" style={{ height: '460px', border: '1px solid rgba(255,255,255,0.07)' }}>
               <iframe
-                src="https://yandex.ru/map-widget/v1/?text=Железнодорожная+ул.+85А&z=16&l=map"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a883cb945e902053c4f5dda7431da59365c80a163f486546edc013cf18b5fca&amp;source=constructor"
                 width="100%"
                 height="100%"
                 frameBorder="0"
