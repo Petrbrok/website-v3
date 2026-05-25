@@ -18,11 +18,12 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image side */}
           <div className="reveal-left relative">
-            <div className="relative rounded-2xl overflow-hidden" style={{ height: '480px' }}>
+            <div className="relative rounded-2xl overflow-hidden" style={{ height: 'clamp(280px, 50vw, 480px)' }}>
               <img
                 src="/images/master-danila.jpg"
                 alt="Мастер Даниил"
                 className="w-full h-full object-cover"
+                style={{ objectPosition: 'center top' }}
               />
               <div
                 className="absolute inset-0"

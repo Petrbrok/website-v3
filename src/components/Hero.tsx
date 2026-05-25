@@ -53,9 +53,9 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/6872599/pexels-photo-6872599.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1080&w=1920"
+          src="/images/hero-car.jpg"
           alt="Детейлинг студия"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hero-bg-img"
           style={{ objectPosition: 'center 40%' }}
         />
         {/* Overlay */}
