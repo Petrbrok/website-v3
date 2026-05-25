@@ -19,12 +19,14 @@ export default function About() {
           {/* Image side */}
           <div className="reveal-left relative">
             <div className="relative rounded-2xl overflow-hidden" style={{ height: 'clamp(280px, 50vw, 480px)' }}>
-              <img
-                src="/images/master-danila.jpg"
-                alt="Мастер Даниил"
-                className="w-full h-full object-cover"
-                style={{ objectPosition: 'center top' }}
-              />
+              <div className="w-full h-full flex flex-col items-center justify-center" style={{ background: 'linear-gradient(135deg, #1a1a1e, #0a0a0a)', border: '1px dashed rgba(192,48,74,0.3)' }}>
+  <div className="flex flex-col items-center justify-center text-center">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#c0304a" strokeWidth="1.5">
+      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" />
+    </svg>
+    <p className="text-white/60 text-sm mt-3 font-medium">📸 Здесь будет фото мастера Даниила</p>
+  </div>
+</div>
               <div
                 className="absolute inset-0"
                 style={{ background: 'linear-gradient(to top, rgba(10,10,12,0.7) 0%, transparent 60%)' }}
