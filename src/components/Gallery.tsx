@@ -179,7 +179,7 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section id="gallery" ref={sectionRef} className="py-20 md:py-28" style={{ background: '#0c0c0f' }}>
+    <section id="gallery" ref={sectionRef} className="py-20 md:py-28 premium-section-bg">
       <style>{`
         @keyframes shimmer {
           0%, 100% { opacity: 0.3; transform: scaleX(0.6); }

@@ -144,7 +144,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="services" ref={sectionRef} className="py-20 md:py-28" style={{ background: '#0a0a0a' }}>
+    <section id="services" ref={sectionRef} className="py-20 md:py-28 premium-section-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14 reveal">

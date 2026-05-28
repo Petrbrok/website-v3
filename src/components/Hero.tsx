@@ -15,11 +15,18 @@ function getWorkingStatus() {
 
 export default function Hero() {
   const counterRefs = useRef<HTMLSpanElement[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [status, setStatus] = useState(getWorkingStatus());
 
   useEffect(() => {
     const interval = setInterval(() => setStatus(getWorkingStatus()), 60000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.75;
+    }
   }, []);
 
   useEffect(() => {
@@ -50,31 +57,42 @@ export default function Hero() {
       className="relative min-h-screen flex items-end pb-20 md:items-center md:pb-0 overflow-hidden"
       style={{ background: '#0a0a0a' }}
     >
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/hero-car.jpg"
-          alt="Детейлинг студия"
-          className="w-full h-full object-cover hero-bg-img"
-          style={{ objectPosition: 'center 40%' }}
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 hero-overlay" />
-        {/* Dark bottom fade */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-40"
-          style={{ background: 'linear-gradient(to bottom, transparent, #0a0a0a)' }}
-        />
-      </div>
 
       {/* Animated accent lines */}
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(192,48,74,0.4), transparent)' }} />
+
+      {/* Video Background */}
+      <div className="absolute top-0 right-0 w-full md:w-3/5 h-full">
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-contain"
+        >
+          <source src="/0528 (1)(1).mp4" type="video/mp4" />
+        </video>
+        {/* Gray darkening overlay */}
+        <div className="absolute inset-0 bg-black/20" />
+        {/* Edge gradients to blend with background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `
+              linear-gradient(to right, #0a0a0a 0%, transparent 15%),
+              linear-gradient(to bottom, #0a0a0a 0%, #0a0a0a 8%, rgba(10,10,10,0.95) 15%, rgba(10,10,10,0.75) 25%, rgba(10,10,10,0.45) 35%, transparent 45%),
+              linear-gradient(to top, #0a0a0a 0%, #0a0a0a 8%, rgba(10,10,10,0.95) 15%, rgba(10,10,10,0.75) 25%, rgba(10,10,10,0.45) 35%, transparent 45%)
+            `
+          }}
+        />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24">
         <div className="max-w-2xl">
           {/* Badge */}
-          <div className="animate-fade-in-up mb-5">
+          <div className="mb-5">
             <span className="section-tag">
               <span className={`w-2 h-2 rounded-full inline-block ${status.open ? 'bg-green-400 animate-pulse' : 'bg-red-400'}`} />
               {status.text}
@@ -83,7 +101,7 @@ export default function Hero() {
 
           {/* Headline */}
           <h1
-            className="animate-fade-in-up delay-100 font-black text-white leading-tight mb-4"
+            className="font-black text-white leading-tight mb-4"
             style={{ fontSize: 'clamp(2.2rem, 5vw, 3.8rem)', lineHeight: 1.08 }}
           >
             Тонировка и<br />
@@ -92,7 +110,7 @@ export default function Hero() {
           </h1>
 
           <p
-            className="animate-fade-in-up delay-200 text-white/60 mb-8 leading-relaxed"
+            className="text-white/60 mb-8 leading-relaxed"
             style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', maxWidth: '480px' }}
           >
             Профессиональная защита кузова, тонирование и детейлинг.
@@ -100,7 +118,7 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="animate-fade-in-up delay-300 flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-3 mb-10">
             <a
               href="https://wa.me/79052685333?text=Здравствуйте!%20Хочу%20записаться%20на%20услугу"
               target="_blank"
@@ -124,7 +142,7 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="animate-fade-in-up delay-400 flex flex-wrap gap-6">
+          <div className="flex flex-wrap gap-6 pb-10">
             <div className="flex flex-col">
               <span
                 className="font-black text-white"

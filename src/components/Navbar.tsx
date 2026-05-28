@@ -34,17 +34,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #c0304a, #7a1528)' }}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3" />
-                <rect x="9" y="11" width="14" height="10" rx="2" />
-                <circle cx="12" cy="16" r="1" />
-                <circle cx="20" cy="16" r="1" />
-              </svg>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="w-10 h-10 object-contain"
+            />
             <div>
               <span className="font-bold text-white text-sm leading-none">Тонировка Авто</span>
               <span className="block text-xs" style={{ color: '#c0304a' }}>бронирование</span>
