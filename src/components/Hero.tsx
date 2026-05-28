@@ -62,8 +62,8 @@ export default function Hero() {
       {/* Animated accent lines */}
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(192,48,74,0.4), transparent)' }} />
 
-      {/* Video Background */}
-      <div className="absolute top-1/2 right-0 w-full md:top-0 md:w-3/5 h-1/2 md:h-full">
+      {/* Video Background - Desktop only */}
+      <div className="hidden md:block absolute top-0 right-0 w-3/5 h-full">
         <video
           ref={videoRef}
           autoPlay
@@ -142,9 +142,23 @@ export default function Hero() {
             </a>
           </div>
 
+          {/* Video - Mobile only */}
+          <div className="md:hidden relative w-full h-64 mb-8">
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-contain"
+            >
+              <source src={carVideo} type="video/mp4" />
+            </video>
+          </div>
+
           {/* Stats */}
-          <div className="flex flex-wrap gap-6 pb-10">
-            <div className="flex flex-col">
+          <div className="flex flex-wrap md:flex-nowrap justify-center md:justify-start gap-6 pb-10">
+            <div className="flex flex-col items-center md:items-start">
               <span
                 className="font-black text-white"
                 style={{ fontSize: '2rem' }}
@@ -154,8 +168,8 @@ export default function Hero() {
               </span>
               <span className="text-white/50 text-sm">отзывов на Яндекс</span>
             </div>
-            <div className="w-px h-12 self-center" style={{ background: 'rgba(255,255,255,0.1)' }} />
-            <div className="flex flex-col">
+            <div className="hidden md:block w-px h-12 self-center" style={{ background: 'rgba(255,255,255,0.1)' }} />
+            <div className="flex flex-col items-center md:items-start">
               <span
                 className="font-black text-white"
                 style={{ fontSize: '2rem' }}
@@ -168,8 +182,9 @@ export default function Hero() {
                 <span className="text-white/50 text-sm">рейтинг</span>
               </div>
             </div>
-            <div className="w-px h-12 self-center" style={{ background: 'rgba(255,255,255,0.1)' }} />
-            <div className="flex flex-col">
+            <div className="w-full md:hidden" />
+            <div className="hidden md:block w-px h-12 self-center" style={{ background: 'rgba(255,255,255,0.1)' }} />
+            <div className="flex flex-col items-center md:items-start">
               <span
                 className="font-black text-white"
                 style={{ fontSize: '2rem' }}
