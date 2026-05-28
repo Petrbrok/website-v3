@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/detailing/',
+  base: '/website-v3/',
   build: {
     outDir: 'docs',
   },
