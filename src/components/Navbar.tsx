@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logo from '/logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +36,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <img
-              src="/logo.png"
+              src={logo}
               alt="Logo"
               className="w-10 h-10 object-contain"
             />

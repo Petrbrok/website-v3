@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import carVideo from '/0528 (1)(1).mp4';
 
 function getWorkingStatus() {
   const now = new Date();
@@ -71,7 +72,7 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-contain"
         >
-          <source src="/0528 (1)(1).mp4" type="video/mp4" />
+          <source src={carVideo} type="video/mp4" />
         </video>
         {/* Gray darkening overlay */}
         <div className="absolute inset-0 bg-black/20" />
