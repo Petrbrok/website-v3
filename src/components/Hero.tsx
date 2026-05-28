@@ -63,7 +63,7 @@ export default function Hero() {
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(192,48,74,0.4), transparent)' }} />
 
       {/* Video Background */}
-      <div className="absolute top-0 right-0 w-full md:w-3/5 h-full">
+      <div className="absolute top-1/2 right-0 w-full md:top-0 md:w-3/5 h-1/2 md:h-full">
         <video
           ref={videoRef}
           autoPlay
