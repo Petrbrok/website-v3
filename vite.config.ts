@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     outDir: 'docs',
   },
-  plugins: [react(), tailwindcss(), viteSingleFile()],
+  plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
