@@ -115,7 +115,7 @@ export default function Contacts() {
                     </div>
                     {(() => {
   const hour = new Date().getHours();
-  const openHour = 9;
+  const openHour = 10;
   const closeHour = 21;
 
   const isOpen = hour >= openHour && hour < closeHour;
