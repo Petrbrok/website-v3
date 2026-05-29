@@ -82,9 +82,6 @@ export default function Advantages() {
     return () => observer.disconnect();
   }, []);
 
-  const featuredAdvantages = advantages.filter(a => a.featured);
-  const displayedAdvantages = window.innerWidth < 768 ? featuredAdvantages : advantages;
-
   return (
     <section ref={sectionRef} className="py-12 md:py-28 premium-section-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,10 +98,10 @@ export default function Advantages() {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {displayedAdvantages.map((item, i) => (
+          {advantages.map((item, i) => (
             <div
               key={i}
-              className={`reveal reveal-delay-${Math.min(i + 1, 6)} card-hover rounded-2xl p-6 flex gap-5`}
+              className={`reveal reveal-delay-${Math.min(i + 1, 6)} card-hover rounded-2xl p-6 flex gap-5 ${!item.featured ? 'hidden md:flex' : ''}`}
               style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
             >
               <div
