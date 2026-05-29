@@ -155,7 +155,6 @@ export default function Services() {
 
   const featuredServices = services.filter(s => s.featured);
   const otherServices = services.filter(s => !s.featured);
-  const displayedServices = showAll ? services : featuredServices;
 
   return (
     <section id="services" ref={sectionRef} className="py-12 md:py-28 premium-section-bg">
@@ -174,10 +173,67 @@ export default function Services() {
 
         {/* Services grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {displayedServices.map((service, i) => (
+          {/* Mobile: show featured or all if showAll is true */}
+          {(showAll ? services : featuredServices).map((service, i) => (
             <div
               key={i}
-              className={`reveal reveal-delay-${Math.min(i + 1, 6)} card-hover relative rounded-2xl p-6 flex flex-col gap-4 ${
+              className={`reveal reveal-delay-${Math.min(i + 1, 6)} card-hover relative rounded-2xl p-6 flex flex-col gap-4 md:hidden ${
+                service.highlight ? 'gradient-border' : ''
+              }`}
+              style={{
+                background: service.highlight
+                  ? 'linear-gradient(135deg, rgba(192,48,74,0.08), rgba(122,21,40,0.04))'
+                  : 'rgba(255,255,255,0.03)',
+                border: service.highlight ? 'none' : '1px solid rgba(255,255,255,0.07)',
+              }}
+            >
+              {/* Badge */}
+              {service.badge && (
+                <span className="service-badge absolute top-4 right-4">{service.badge}</span>
+              )}
+
+              {/* Icon */}
+              <div
+                className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                style={{
+                  background: service.highlight
+                    ? 'linear-gradient(135deg, rgba(192,48,74,0.2), rgba(122,21,40,0.15))'
+                    : 'rgba(192,48,74,0.08)',
+                  color: '#c0304a',
+                }}
+              >
+                {service.icon}
+              </div>
+
+              {/* Content */}
+              <div className="flex-1">
+                <h3 className="font-bold text-white text-base mb-1.5">{service.title}</h3>
+                <p className="text-white/50 text-sm leading-relaxed">{service.desc}</p>
+              </div>
+
+              {/* Price + CTA */}
+              <div className="flex items-center justify-between pt-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                <span className="font-bold text-lg" style={{ color: '#c0304a' }}>{service.price}</span>
+                <a
+                  href="https://wa.me/79052685333?text=Здравствуйте!%20Хочу%20записаться"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-white/50 hover:text-white/80 transition-colors flex items-center gap-1"
+                >
+                  Записаться
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          ))}
+
+          {/* Desktop: always show all services */}
+          {services.map((service, i) => (
+            <div
+              key={i}
+              className={`reveal reveal-delay-${Math.min(i + 1, 6)} card-hover relative rounded-2xl p-6 flex-col gap-4 hidden md:flex ${
                 service.highlight ? 'gradient-border' : ''
               }`}
               style={{
