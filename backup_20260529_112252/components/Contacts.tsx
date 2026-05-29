@@ -153,7 +153,7 @@ export default function Contacts() {
               style={{ background: 'linear-gradient(135deg, rgba(192,48,74,0.08), rgba(122,21,40,0.05))', border: '1px solid rgba(192,48,74,0.15)' }}
             >
               <h3 className="font-bold text-white mb-2">Готовы записаться?</h3>
-              <p className="text-white/50 text-sm mb-4">Напишите нам, ответим в течение нескольких минут и выберем удобное время.</p>
+              <p className="text-white/50 text-sm mb-4">Напишите нам — ответим в течение нескольких минут и выберем удобное время.</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="https://wa.me/79052685333?text=Здравствуйте!%20Хочу%20записаться"
@@ -197,7 +197,7 @@ export default function Contacts() {
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
-              <span className="text-white/60 text-sm">Железнодорожная ул., 85А. Удобный въезд с улицы</span>
+              <span className="text-white/60 text-sm">Железнодорожная ул., 85А — удобный въезд с улицы</span>
             </div>
           </div>
         </div>

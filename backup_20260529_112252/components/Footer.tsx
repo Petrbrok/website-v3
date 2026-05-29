@@ -63,7 +63,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-white/25 text-xs">
           <span>© {year} Тонировка Авто бронирование. Все права защищены.</span>
-          <span>Работаем ежедневно до 21:00. Железнодорожная ул., 85А</span>
+          <span>Работаем ежедневно до 21:00 · Железнодорожная ул., 85А</span>
         </div>
       </div>
     </footer>

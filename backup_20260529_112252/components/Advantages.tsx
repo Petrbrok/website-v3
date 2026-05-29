@@ -9,8 +9,7 @@ const advantages = [
       </svg>
     ),
     title: 'Качественные материалы',
-    desc: 'Проверенные плёнки. Без дешёвых аналогов.',
-    featured: true,
+    desc: 'Используем только проверенные плёнки и материалы. Никаких дешёвых аналогов.',
   },
   {
     icon: (
@@ -20,8 +19,7 @@ const advantages = [
       </svg>
     ),
     title: 'Работаем до 21:00',
-    desc: 'Удобное время, включая вечерние часы.',
-    featured: true,
+    desc: 'Принимаем авто в удобное для вас время, включая вечерние часы.',
   },
   {
     icon: (
@@ -31,19 +29,7 @@ const advantages = [
       </svg>
     ),
     title: 'Гарантия на работу',
-    desc: 'Гарантия на все работы. Исправим, если что-то не так.',
-    featured: true,
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <path d="M8 21h8M12 17v4" />
-      </svg>
-    ),
-    title: 'Опытный мастер',
-    desc: '5+ лет практики. Даниил работает лично.',
-    featured: true,
+    desc: 'Даём гарантию на все выполненные работы. Если что-то не так — исправим.',
   },
   {
     icon: (
@@ -55,7 +41,6 @@ const advantages = [
     ),
     title: 'Постоянные клиенты',
     desc: 'Многие клиенты возвращаются снова и приводят друзей. Это лучшая оценка работы.',
-    featured: false,
   },
   {
     icon: (
@@ -65,8 +50,17 @@ const advantages = [
       </svg>
     ),
     title: 'Честные цены',
-    desc: 'Никаких скрытых доплат. Цена, названная до работы, это финальная цена.',
-    featured: false,
+    desc: 'Никаких скрытых доплат. Цена, названная до работы — это финальная цена.',
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" />
+      </svg>
+    ),
+    title: 'Опытный мастер',
+    desc: 'Более 5 лет практики. Мастер Даниил лично выполняет все работы — без учеников.',
   },
 ];
 
@@ -82,26 +76,23 @@ export default function Advantages() {
     return () => observer.disconnect();
   }, []);
 
-  const featuredAdvantages = advantages.filter(a => a.featured);
-  const displayedAdvantages = window.innerWidth < 768 ? featuredAdvantages : advantages;
-
   return (
-    <section ref={sectionRef} className="py-12 md:py-28 premium-section-bg">
+    <section ref={sectionRef} className="py-20 md:py-28 premium-section-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-10 md:mb-14 reveal">
+        <div className="text-center mb-14 reveal">
           <div className="section-tag mx-auto w-fit">Почему выбирают нас</div>
           <h2 className="font-black text-white mb-4" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
             Наши <span className="gradient-text">преимущества</span>
           </h2>
           <p className="text-white/50 max-w-md mx-auto text-sm">
-            Делаем работу правильно. С первого раза.
+            Мы не просто делаем работу — мы делаем её правильно. С первого раза.
           </p>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {displayedAdvantages.map((item, i) => (
+          {advantages.map((item, i) => (
             <div
               key={i}
               className={`reveal reveal-delay-${Math.min(i + 1, 6)} card-hover rounded-2xl p-6 flex gap-5`}
@@ -122,7 +113,7 @@ export default function Advantages() {
         </div>
 
         {/* Rating bar */}
-        <div className="reveal mt-10 md:mt-14 rounded-2xl p-6 md:p-8" style={{ background: 'rgba(192,48,74,0.05)', border: '1px solid rgba(192,48,74,0.15)' }}>
+        <div className="reveal mt-14 rounded-2xl p-6 md:p-8" style={{ background: 'rgba(192,48,74,0.05)', border: '1px solid rgba(192,48,74,0.15)' }}>
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex flex-col items-center md:items-start">
               <span className="font-black text-white" style={{ fontSize: '3.5rem', lineHeight: 1 }}>4.7</span>

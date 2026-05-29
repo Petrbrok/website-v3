@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 const galleryItems = [
   {
     label: 'Тонировка стёкол',
-    desc: 'Ниссан, тонировка 15%',
+    desc: 'Ниссан · тонировка 15%',
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="7" width="20" height="14" rx="2" />
@@ -191,8 +191,8 @@ export default function Gallery() {
         <div className="text-center mb-14 reveal">
           <div className="section-tag mx-auto w-fit">Наши работы</div>
           <h2 className="font-black text-white mb-4" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>
-            До и после.<br />
-            <span className="gradient-text">Результат говорит сам</span>
+            До и после —<br />
+            <span className="gradient-text">результат говорит сам</span>
           </h2>
           <p className="text-white/50 max-w-md mx-auto text-sm">
             Перетащите ползунок, чтобы сравнить результат до и после нашей работы

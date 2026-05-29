@@ -16,27 +16,27 @@ export default function App() {
       <Hero />
 
       {/* Divider */}
-      <div className="section-divider md:block hidden" />
+      <div className="section-divider" />
 
       <Services />
 
-      <div className="section-divider md:block hidden" />
+      <div className="section-divider" />
 
       <Gallery />
 
-      <div className="section-divider md:block hidden" />
+      <div className="section-divider" />
 
       <Advantages />
 
-      <div className="section-divider md:block hidden" />
+      <div className="section-divider" />
 
       <About />
 
-      <div className="section-divider md:block hidden" />
+      <div className="section-divider" />
 
       <Reviews />
 
-      <div className="section-divider md:block hidden" />
+      <div className="section-divider" />
 
       <Contacts />
 

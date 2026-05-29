@@ -59,8 +59,8 @@ export default function About() {
           <div className="reveal-right">
             <div className="section-tag">О мастере</div>
             <h2 className="font-black text-white mb-6" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.6rem)' }}>
-              Профессиональный мастер <span className="gradient-text">Даниил</span>.<br />
-              Тонировка и защита кузова
+              Профессиональный мастер <span className="gradient-text">Даниил</span> —<br />
+              тонировка и защита кузова
             </h2>
 
             <div className="space-y-4 text-white/60 leading-relaxed">
@@ -95,10 +95,10 @@ export default function About() {
             {/* Features */}
             <div className="mt-8 space-y-3">
               {[
-                'Работаю лично, без учеников и помощников',
+                'Работаю лично — без учеников и помощников',
                 'Честные сроки и цены до начала работы',
-                'Принимаю авто до 21:00, удобно после работы',
-                'Постоянным клиентам: скидки и приоритетная запись',
+                'Принимаю авто до 21:00 — удобно после работы',
+                'Постоянным клиентам — скидки и приоритетная запись',
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(192,48,74,0.15)' }}>
