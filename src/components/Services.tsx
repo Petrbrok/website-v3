@@ -151,7 +151,7 @@ export default function Services() {
     reveals?.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, []);
+  }, [showAll]);
 
   const featuredServices = services.filter(s => s.featured);
   const otherServices = services.filter(s => !s.featured);
