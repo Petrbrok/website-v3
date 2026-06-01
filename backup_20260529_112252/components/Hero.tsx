@@ -4,7 +4,7 @@ import carVideo from '/0528 (1)(1).mp4';
 function getWorkingStatus() {
   const now = new Date();
   const hour = now.getHours();
-  const openHour = 9;
+  const openHour = 10;
   const closeHour = 21;
   if (hour >= openHour && hour < closeHour) {
     return { open: true, text: `Открыто сейчас · до ${closeHour}:00` };
